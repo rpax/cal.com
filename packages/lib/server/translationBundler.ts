@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync } from "fs";
+import { readFileSync, readdirSync, existsSync } from "fs";
 import { join } from "path";
 import path from "path";
 
@@ -6,8 +6,32 @@ import { CALCOM_VERSION } from "@calcom/lib/constants";
 import logger from "@calcom/lib/logger";
 
 function getLocalesPath() {
-  const localesPath = path.join(process.cwd(), "locales");
-  logger.info(`[translationBundler] getLocalesPath() resolved to: ${localesPath}`);
+  // Try multiple possible paths and log which one exists
+  const possiblePaths = [
+    path.join(process.cwd(), "public/locales"),
+    path.join(process.cwd(), "locales"),
+    path.join(process.cwd(), "apps/web/public/locales"),
+    path.join(process.cwd(), "packages/lib/server/locales"),
+  ];
+
+  logger.info(`[translationBundler] Testing possible locales paths:`);
+  for (const testPath of possiblePaths) {
+    const exists = existsSync(testPath);
+    logger.info(`[translationBundler] ${testPath} - ${exists ? "EXISTS" : "NOT FOUND"}`);
+
+    if (exists) {
+      try {
+        const files = readdirSync(testPath);
+        logger.info(`[translationBundler] Files in ${testPath}: ${files.join(", ")}`);
+      } catch (err) {
+        logger.error(`[translationBundler] Could not read directory ${testPath}:`, err);
+      }
+    }
+  }
+
+  // Use the first path that exists, or fall back to the first one
+  const localesPath = possiblePaths.find((p) => existsSync(p)) || possiblePaths[0];
+  logger.info(`[translationBundler] Using locales path: ${localesPath}`);
   return localesPath;
 }
 
