@@ -64,7 +64,7 @@ COPY --from=build /app/packages/tsconfig ./packages/tsconfig
 COPY --from=build /app/packages/types ./packages/types
 COPY --from=build /app/apps/web/next.config.js ./apps/web/next.config.js
 COPY --from=build /app/apps/web/next-i18next.config.js ./apps/web/next-i18next.config.js
-COPY --from=build /app/apps/web/public/static/locales ./apps/web/public/static/locales
+COPY --from=build /app/apps/web/public/locales ./apps/web/public/locales
 COPY --from=build /app/apps/web/package.json ./apps/web/package.json
 # Expose port 80
 EXPOSE 80
