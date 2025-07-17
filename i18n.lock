@@ -50,6 +50,7 @@ checksums:
     calvideo_settings_description: ea62d26cbfcad5d0bf4d27a32866dc50
     disable_recording_for_guests: d8598c68957f6d46d926adae375d2e95
     enable_automatic_transcription: 3d84332504e900adce2064d97116eade
+    enable_automatic_recording: 6c99214cf122cfbeadddb116fd75a595
     video_options: 705aebc03fac45638bd74fb69a64daa0
     get_meeting_session_details: eb562cbf4ea840cca25125d17da33cc1
     meeting_session_details: c63cef705a5710aaf31d5c2662d58086
@@ -77,6 +78,7 @@ checksums:
     you_can_view_booking_details_with_this_url: 64f9ae32d2162ea4afab41fb8ac07fb1
     no_options_available: 1578bfcdda54521607e7695776832765
     cancellation_reason: 8e73160be8cdaed6e71565a4ec49e0e0
+    cancelled_by: bd04703b22caa332102b8308bab4239b
     cancellation_reason_host: b9eb5a356b3a6220ca4d67e0f094555c
     cancellation_reason_placeholder: f4eac23857afdc8b674ba077e25e8799
     notify_attendee_cancellation_reason_warning: 7138f65a5fd90697e7535c9c2c1d3990
@@ -118,6 +120,8 @@ checksums:
     delete_calendar_event_error: 5990731c10b4748c21c1ed31e8729605
     already_signed_up_for_this_booking_error: ad057090220b6b8adf9d4e6bd0072a1a
     hosts_unavailable_for_booking: d26a4fa6c90f863ec4b955badfd43369
+    fixed_hosts_unavailable_for_booking: e379ff2fb3df7de4de66f7e11f01181f
+    round_robin_hosts_unavailable_for_booking: 612117ccd8929e89fb6086c0376f4f36
     help: 62712a1f2fcef75e399e9a9a9ddbd495
     price: 6e3258d4cf5835177d174a5259a9cfd6
     paid: 5e2fa7af50cd5d877d9c54fd87bb3bb5
@@ -2189,6 +2193,10 @@ checksums:
     error_charging_card: c140bca6c3e238a99f0e5bdd988be505
     collect_no_show_fee: 25014619ab47fd885d14fae0b6e915a8
     no_show_fee_charged: eec2c8c1d29560837514491fa12eb0b8
+    your_card_was_declined: 953d2e4912d07c1b5d8c2ae8994cdde2
+    your_card_does_not_support_this_type_of_purchase: 553ddbd5413ca0af1c0048b23fff7337
+    amount_must_convert_to_at_least: 030de3642f681aaf28556b69c8ca1fb7
+    could_not_charge_card: eca4c10d6b6819b2cebb9dc7ecf75f17
     insights: 1e88b2537ba6966f2a90b0def1ce1ddc
     routing_forms: d247797af01c33bcf3545d9708f39286
     testing_workflow_info_message: 63eb6b5f857e4fab7eae515a85e6bed5
@@ -3317,7 +3325,7 @@ checksums:
     pbac_desc_manage_team_insights: d3eab216d5f3e34358e68b287adcc102
     read_permission_auto_enabled_tooltip: e6a994bc46d1208f07a303cd638efca2
     choose_restriction_schedule: ddc5f4cb03d3502a37e84fc5e3224c4f
-    choose_restriction_schedule_description: f99d4bd2582406f0dcb425cafc6f2b6f
+    restriction_schedule_description: d861bc8515d77f509eefc8ff160e7593
     use_booker_timezone: 4cefac1906ce1eb110e2e56b8d67e099
     use_booker_timezone_info: a4229154c78943a19c36121824f5ecc2
     load_balancing_warning: 32253dc7d247d56370c67f80da8b9cff
@@ -3338,6 +3346,10 @@ checksums:
     booking_not_allowed_by_restriction_schedule_error: e4505da88d555ca9486a1113b5ca94a6
     restriction_schedule_not_found_error: a0ee65030e040bc733e822f33e4aa678
     converted_image_size_limit_exceed: 7718a7525d55152117a3bb080acaf44d
+    routing_funnel: f1a521e5e4e4468bb2249a6ea1facc39
+    routing_funnel_total_submissions: 8de3288bfb92dc66fe2b2f72b6e34ffc
+    routing_funnel_successful_routings: 95db57c8515a59cfa40c43e47b228420
+    routing_funnel_accepted_bookings: f1bc4bdbab722875b5db5323249519af
     license_key: dc79d7a540527b8cf1cbf8d067c5445a
     license_selection_title: 60bd86c4a78df67274dc935acb99889d
     license_selection_description: 04293470e5d4425b382ecec527f3480c
@@ -3356,4 +3368,6 @@ checksums:
     license_validation_failed: 4052970cd9889254732c474940f42663
     license_key_saved: bce8ce1a964cb0c0c7cbbfdcc6523485
     timezone_mismatch_tooltip: a1a8ffbc355ed721fe7adaaa8a521251
+    failed_bookings_by_field: 2411b6ea0b93077d317c10b91b82a000
+    event_type_no_hosts: bc0fdbcb0db11dbd580e5d3b9cef600b
     ADD_NEW_STRINGS_ABOVE_THIS_LINE_TO_PREVENT_MERGE_CONFLICTS: 18323f2f3fabb169a7cb50ff62433850
